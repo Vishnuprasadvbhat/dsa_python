@@ -11,28 +11,25 @@ Explanation:
 Arr3  + Arr4 =700,
 which is maximum. .
 """
-def sub_Arr(arr,n,k):
-    start = 0
-    end = 0
-    sum = 0
-    mx = 0
-    while (end<n):
-        if end - start + 1 < k:
-            end = end + 1
-        if end - start + 1 == k:
-            sum = sum + arr[end]
-            mx = max(mx,sum)
-            sum = sum - arr[start]
-            start = start + 1
-            end = end +1
-    return mx
+def sub_arr(arr,k):
+    n= len(arr)
+
+    window_sum = sum(arr[:k])
+    max_sum = window_sum
+
+    for  i in range(n-k):
+        window_sum = window_sum - arr[i] + arr[i+k]
+        max_sum = max(max_sum,window_sum)
+
+    return max_sum
 
 
-N = 4
+
+# N = 4
 K = 2
 Arr = [100, 200, 300, 400]
 
-print(sub_Arr(Arr,N,K))
+print(sub_arr(Arr,K))
 
 
 
