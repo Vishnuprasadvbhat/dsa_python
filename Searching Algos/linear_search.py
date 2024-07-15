@@ -8,7 +8,7 @@ def linear(arr, N, key):
 
     for index, element in enumerate(arr):
         if element == key:
-            return index
+            return (f'The element {element} is at index {index}')
     return False
 
 
