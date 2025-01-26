@@ -12,9 +12,9 @@ def bubble_sort(elements):
                 elements[j+1] = temp
                 swapped = True
         if not swapped:
+
             break
     return elements
-
 
 
 print(bubble_sort(nums))

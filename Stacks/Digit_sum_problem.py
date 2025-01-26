@@ -9,4 +9,5 @@ def Find_Min(num):
         num//=10
     return min
 
-print(sum(Find_Min(i) for i in lst))
+# print(sum(Find_Min(i) for i in lst))
+print(Find_Min(89))

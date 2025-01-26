@@ -17,12 +17,14 @@ class Stack:
         self.top += 1
         self.stack.append(value)
 
-    def pop(self,value):
+    def pop(self):
         if self.isempty():
             return print('StacK is empty')
 
         self.top -= 1
-        self.stack.pop()
+        pop_element = self.stack.pop(0)
+
+        return pop_element
 
     def peek(self):
         if self.isempty():
@@ -41,13 +43,16 @@ stack = Stack()
 
 stack.push(20)
 stack.push(10)
+stack.push('+')
 stack.push(60)
+stack.push('*')
 stack.isfull()
 stack.isempty()
 stack.peek()
 stack.show()
-
-
+stack.push(stack.pop() + stack.pop()) # 20 +10  = 30, 30 must be appended
+# [20, 10, 60] previous stack state
+stack.show()
 
 
 
